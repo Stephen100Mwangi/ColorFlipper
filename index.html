@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color flipper</title>
+    <link rel="stylesheet" href="Colorflip.css">
+    <link rel="stylesheet" href="hex.html">
+</head>
+<body>
+    <nav>
+        <div class=" center">
+            <h1>Colour flipper</h1>
+            <ul class="navlink">
+                <li><a href="#">Simple</a></li>
+                <li><a href="#">Hex</a></li>
+            </ul>
+        </div>
+    </nav>
+    <main>
+        <div class="container">
+            <h3>Background color: 
+                <span class="color">#008000</span>
+            </h3><!--class color will be used in js-->
+            <button class="btn btn-color" id="btn">Click Me</button><!--id btn will be used in js-->
+        </div>
+    </main>
+    <script>
+        const colors = ["red","green","#008000","#ff0000","#fff","#a52a2a","#0000ff","salmon","gray","tomato"]
+        const btn= document.getElementById('btn');
+        const color=document.querySelector(".color");
+        //Event listener
+        //Change color every time I click
+        btn.addEventListener("click",function(){
+           const randomNumber=getRandomnumber();
+           document.body.style.backgroundColor= colors[randomNumber];
+           color.textContent=colors[randomNumber];
+        })
+        function getRandomnumber()
+        {
+            return Math.floor(Math.random()*colors.length);
+        }
+
+    </script> 
+    <script src="hex.js"></script>
+ 
+</body>
+</html>
